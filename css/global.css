@@ -1,0 +1,41 @@
+:root{
+  --title-text: linear-gradient(137deg, #ffffff, #b0faff75); 
+  --general-text: #ffffff;
+}
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 5vw;
+}
+.body {
+  font-family: "Hauora", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+  background: #0D111B;
+  color: var(--general-text);
+}
+.wrapper{
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1160px;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.title{
+  background: var(--title-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Inter';
+}
+.text{
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
