@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Hauora';
+    src: url('../fonts/Hauora-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Hauora-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hauora';
+    src: url('../fonts/Hauora-SemiBold.woff2') format('woff2'),
+        url('../fonts/Hauora-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hauora';
+    src: url('../fonts/Hauora-Bold.woff2') format('woff2'),
+        url('../fonts/Hauora-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hauora';
+    src: url('../fonts/Hauora-Regular.woff2') format('woff2'),
+        url('../fonts/Hauora-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Inter-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Bold.woff2') format('woff2'),
+        url('../fonts/Inter-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    src: url('GolosText-Bold.woff2') format('woff2'),
+        url('GolosText-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
