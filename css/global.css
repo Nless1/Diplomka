@@ -13,6 +13,9 @@ html{
   background: #0D111B;
   color: var(--general-text);
 }
+.body--opened-menu{
+  overflow: hidden;
+}
 .wrapper{
   min-height: 100%;
   width: 100%;
