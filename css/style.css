@@ -220,7 +220,7 @@
     opacity: 1;
     visibility: visible;
     font-size: 24px;
-    padding: 26vh 15px 30px;
+    padding: 21vh 15px 30px;
   }
   .body--opened-menu .header__interface{
     justify-content: end;
