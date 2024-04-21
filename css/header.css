@@ -4,8 +4,8 @@
 }
 .header__inner {
   padding: 13px 20px;
-  display: grid;
-  grid-template-columns: .2fr auto .2fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   font-size: 14px;
   line-height: 19px;
@@ -15,18 +15,27 @@
 .header__logo {
   margin-right: 37px;
 }
+.header__wrap{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 .header__nav {
   display: flex;
-  gap: 43px;
+  align-items: center;
+  gap: 5vh 43px;
   color: #ffffff6b;
 }
-.header__item {
+.header__link{
+  padding: 5px 0;
+  transition: all .3s;
+}
+.header__link:hover {
+  color: #ffffffc3;
 }
 .header__item:last-child{
   color: var(--general-text);
   font-weight: 700;
-}
-.header__link {
 }
 .header__interface {
   display: flex;
@@ -46,6 +55,10 @@
   backdrop-filter: blur(8px);
   padding: 7px 11px;
   position: relative;
+  transition: all .3s;
+}
+.header__lang-choise:hover{
+  transform: scale(1.05);
 }
 .header__currency {
   display: flex;
@@ -57,4 +70,72 @@
   background: #ffffff26;
   backdrop-filter: blur(8px);
   padding: 4px 12px;
+  transition: all .3s;
+}
+.header__currency:hover{
+  transform: scale(1.05);
+}
+
+/* ====================================== */
+
+.burger-icon{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  z-index: 11;
+}
+.burger-icon span::before,
+.burger-icon span::after,
+.burger-icon span{
+  display: block;
+  width: 30px;
+  height: 3px;
+  border-radius: 100px;
+  transition: .5s;
+  background: #7675a3;
+}
+.burger-icon span{
+  position: relative;
+}
+.burger-icon span::before,
+.burger-icon span::after{
+  position: absolute;
+  content: '';
+}
+.burger-icon span::before{
+  top: -8px;
+}
+.burger-icon span::after{
+  bottom: -8px;
+}
+.burger-icon:hover span::before{
+  transform: rotate(5deg);
+}
+.burger-icon:hover span::after{
+  transform: rotate(-5deg);
+}
+.burger-icon:hover span{
+  background: #7675a3aa;
+}
+.body--opened-menu .burger-icon span{
+  background: transparent;
+}
+.body--opened-menu .burger-icon span::before{
+  top: 0;
+  transform: rotate(45deg);
+}
+.body--opened-menu .burger-icon span::after{
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+.body--opened-menu .burger-icon:hover span::before{
+  transform: rotate(38deg);
+}
+.body--opened-menu .burger-icon:hover span::after{
+  transform: rotate(-38deg);
+}
+.body--opened-menu .burger-icon:hover span{
+  background: #7675a30f;
 }
