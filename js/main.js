@@ -7,10 +7,11 @@ function burgerInit(e){
     document.addEventListener('keydown', burgerClose)
     const burgerButton = e.target.closest('.burger-icon')
     const burgerNavLink = e.target.closest('.header__link')
-    e.preventDefault()
-
+    
     if(!burgerButton && !burgerNavLink) return
     if(document.documentElement.clientWidth > 1000) return
+    
+    e.preventDefault()
 
     document.body.classList.toggle('body--opened-menu')
     function burgerClose(e){
@@ -19,6 +20,30 @@ function burgerInit(e){
       }
     }
   }
+
+// табы
+
+const platformsList = document.querySelector('.platforms-list')
+
+platformsList.addEventListener('click', toggleIcon)
+
+function toggleIcon(e){
+
+  const tabIcon = e.target.closest('.platforms-link')
+  
+  if(!tabIcon) return
+  e.preventDefault()
+  if(e.target.closest('.platforms-link--focus')) return
+  
+  const tabContentID = tabIcon.getAttribute('href')
+
+  document.querySelector('.button-icon--show').classList.remove('button-icon--show')
+  document.querySelector(tabContentID).classList.add('button-icon--show')
+
+  document.querySelector('.platforms-link--focus').classList.remove('platforms-link--focus')
+  tabIcon.classList.add('platforms-link--focus')
+}
+
 // слайдер о компании
 
 const swiper = new Swiper('.about__slider', {
