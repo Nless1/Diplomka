@@ -9,7 +9,7 @@ html{
 .body {
   font-family: "Hauora", "Arial", sans-serif;
   font-size: 18px;
-  line-height: 32px;
+  line-height: 1.78;
   background: #0D111B;
   color: var(--general-text);
 }
@@ -22,6 +22,15 @@ html{
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+.main__about{
+  padding: 180px 0 20px;
+}
+.main__partners{
+  padding: 200px 0 20px;
+}
+.main__application{
+  padding: 20px 0 145px;
 }
 .container {
   margin: 0 auto;
