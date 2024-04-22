@@ -513,6 +513,7 @@
 @media (max-width: 550px){
   .about__title{
     font-size: 8vw;
+    margin-bottom: 24px;
   }
   /* ============== */
   .about__slide{
@@ -536,6 +537,10 @@
   }
   .partners__bg-title{
     top: -18.3%;
+  }
+  /* ============== */
+  .application__title{
+    margin-bottom: 24px;
   }
 }
 @media (max-width: 451px){
