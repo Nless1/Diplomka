@@ -32,6 +32,12 @@ html{
 .main__application{
   padding: 20px 0 145px;
 }
+.main__socials {
+  padding: 40px 0 60px;
+}
+.main__FAQ{
+  padding: 90px 0;
+}
 .container {
   margin: 0 auto;
   max-width: 1160px;
@@ -50,4 +56,57 @@ html{
   font-weight: 600;
   opacity: 0.8;
   letter-spacing: 1px;
+}
+.bg-title{
+  overflow: hidden;
+  font-family: 'Golos';
+  font-size: 180px;
+  font-weight: 600;
+  line-height: 109.1%;
+  background: linear-gradient(137.68deg, #ffffff0d,#b0faff04);
+  -webkit-text-fill-color:
+  transparent;
+  background-clip:
+  text;
+  z-index: -1;
+}
+.button{
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px 0px #4b48f130;
+  background: #1d9a6d;
+  padding: 16px 32px;
+  transition: all .3s;
+}
+.button:hover{
+  background: #1d989a;
+}
+
+.fieldInput {
+  display: block;
+  background: #ffffff1a;
+  position: relative;
+  box-shadow: 0 4px 20px 0 #00000017;
+  overflow: hidden;
+}
+.form-input {
+  background: none;
+  font-size: 16px;
+  color: var(--general-text);
+}
+.form-input::placeholder{
+  color: var(--general-text);
+}
+.form-submit {
+  color: var(--general-text);
+  position: absolute;
+  font-weight: 700;
+  background: #279D88;
+  box-shadow: 0px 4px 16px 0px #00ffa342;
+  transition: all .3s;
+}
+.form-submit:hover{
+  background: #30b9b7;
 }
