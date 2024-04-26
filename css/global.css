@@ -89,7 +89,6 @@ html{
   background: #ffffff1a;
   position: relative;
   box-shadow: 0 4px 20px 0 #00000017;
-  overflow: hidden;
 }
 .form-input {
   background: none;
