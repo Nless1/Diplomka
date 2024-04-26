@@ -135,35 +135,40 @@ const swiper = new Swiper('.about__slider', {
   }
 });
 
+// слайдер этапов установки
+
+var swiper2 = new Swiper(".installation__swiper", {
+  effect: "cards",
+  grabCursor: true,
+  initialSlide: 2,
+  speed: 500,
+  rotate: true,
+  mousewheel: {
+  invert: false,
+},
+});
+
 // слайдер соц сетей
 
-const swiper2 = new Swiper('.socials__slider', {
-  spaceBetween: 20,
-  // slidesPerView: 1,
+const swiper3 = new Swiper('.swiper-container', {
   loop: true,
+  slidesPerView: 3,
+  spaceBetween: 20,
+  swipe: false,
 
   navigation: {
     nextEl: '.socials__next',
     prevEl: '.socials__prev',
   },
 
-  // breakpoints: {
-  //   451:{
-  //     slidesPerView: 1.3,
-  //   },
-  //   701:{
-  //     slidesPerView: 2,
-  //   },
-  //   801:{
-  //     slidesPerView: 2.3,
-  //   },
-  //   901:{
-  //     slidesPerView: 2.5,
-  //   },
-  //   1101: {
-  //     slidesPerView: 100,
-  //   }
-  // }
+  breakpoints: {
+    701:{
+      slidesPerView: 6,
+    },
+    1101:{
+      slidesPerView: 7,
+    }
+  }
 });
 
 })()
