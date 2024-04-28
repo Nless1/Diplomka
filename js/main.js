@@ -25,24 +25,111 @@ function burgerInit(e){
 
 const platformsList = document.querySelector('.platforms-list')
 
-platformsList.addEventListener('click', toggleIcon)
+platformsList.addEventListener('click', toggleButton)
 
-function toggleIcon(e){
+function toggleButton(e){
 
-  const tabIcon = e.target.closest('.platforms-link')
+  const tabButton = e.target.closest('.platforms-link')
+  const tabItem = tabButton.parentElement.classList
+  const downloadButton = document.querySelector('.application__download-button')
   
-  if(!tabIcon) return
+  if(!tabButton) return
   e.preventDefault()
   if(e.target.closest('.platforms-link--focus')) return
   
-  const tabContentID = tabIcon.getAttribute('href')
+  switch(true) {
+    case tabItem.contains("android-item"):
+      downloadButton.classList.add('modal-1');
+      downloadButton.classList.remove('modal-2');
+      downloadButton.classList.remove('modal-3');
+      downloadButton.classList.remove('modal-4');
+      break;
+    case tabItem.contains("apple-item"):
+      downloadButton.classList.add('modal-2');
+      downloadButton.classList.remove('modal-1');
+      downloadButton.classList.remove('modal-3');
+      downloadButton.classList.remove('modal-4');
+      break;
+    case tabItem.contains("linux-item"):
+      downloadButton.classList.add('modal-3');
+      downloadButton.classList.remove('modal-2');
+      downloadButton.classList.remove('modal-1');
+      downloadButton.classList.remove('modal-4');
+      break;
+    case tabItem.contains("windows-item"):
+      downloadButton.classList.add('modal-4');
+      downloadButton.classList.remove('modal-2');
+      downloadButton.classList.remove('modal-3');
+      downloadButton.classList.remove('modal-1');
+      break;
+  }
+
+  const tabContentID = tabButton.getAttribute('href')
 
   document.querySelector('.button-icon--show').classList.remove('button-icon--show')
   document.querySelector(tabContentID).classList.add('button-icon--show')
 
   document.querySelector('.platforms-link--focus').classList.remove('platforms-link--focus')
-  tabIcon.classList.add('platforms-link--focus')
+  tabButton.classList.add('platforms-link--focus')
 }
+
+// модальные окна секции "application"
+
+const appButton = document.querySelector('.application__download-button')
+
+appButton.addEventListener('click', openModal)
+
+function openModal(e){
+  
+  if(!appButton) return
+  e.preventDefault()
+  
+  switch(true){
+    case appButton.classList.contains('modal-1'): document.body.classList.add('body--opened-modal-1'); break;
+    case appButton.classList.contains('modal-2'): document.body.classList.add('body--opened-modal-2'); break;
+    case appButton.classList.contains('modal-3'): document.body.classList.add('body--opened-modal-3'); break;
+    case appButton.classList.contains('modal-4'): document.body.classList.add('body--opened-modal-4'); break;
+  }
+}
+const modal = document.querySelectorAll('.modal')
+
+modal.forEach(el =>{
+  el.addEventListener('click', (e) => {
+
+    e.preventDefault()
+
+  modal1Close(e);
+  modal2Close(e);
+  modal3Close(e);
+  modal4Close(e);
+});
+
+function modal1Close(e){ 
+  if(e.target.closest('.modal__close') || e.target.classList.contains('modal')){ 
+    document.body.classList.remove('body--opened-modal-1') 
+  } 
+} 
+
+function modal2Close(e){ 
+  if(e.target.closest('.modal__close') || e.target.classList.contains('modal')){ 
+    document.body.classList.remove('body--opened-modal-2') 
+  } 
+} 
+
+function modal3Close(e){ 
+  if(e.target.closest('.modal__close') || e.target.classList.contains('modal')){ 
+    document.body.classList.remove('body--opened-modal-3') 
+  } 
+} 
+
+function modal4Close(e){ 
+  if(e.target.closest('.modal__close') || e.target.classList.contains('modal')){ 
+    document.body.classList.remove('body--opened-modal-4') 
+  } 
+}
+})
+
+
 
 // табы секции "FAQ"
 
@@ -105,7 +192,6 @@ accordionLists.forEach(el =>{
 
 // слайдер о компании
 
-
 const swiper = new Swiper('.about__slider', {
   spaceBetween: 24,
   slidesPerView: 1,
@@ -140,7 +226,6 @@ const swiper = new Swiper('.about__slider', {
 var swiper2 = new Swiper(".installation__swiper", {
   effect: "cards",
   grabCursor: true,
-  initialSlide: 2,
   speed: 500,
   rotate: true,
   mousewheel: {
@@ -162,6 +247,12 @@ const swiper3 = new Swiper('.swiper-container', {
   },
 
   breakpoints: {
+    401:{
+      slidesPerView: 4,
+    },
+    501:{
+      slidesPerView: 5,
+    },
     701:{
       slidesPerView: 6,
     },
@@ -171,4 +262,21 @@ const swiper3 = new Swiper('.swiper-container', {
   }
 });
 
+// ховер-аккордеон в футере
+
+const footerCol = document.querySelectorAll('.footer__col');
+
+footerCol.forEach(el =>{
+  
+  if(el.classList.contains('footer__col-1')) return
+  
+  el.addEventListener('mouseenter', function() {
+    this.classList.add('footer__col-active');
+    el.style.maxHeight = el.scrollHeight + 'px';
+  });
+  el.addEventListener('mouseleave', function() {
+    this.classList.remove('footer__col-active');
+    el.style.maxHeight = null
+  });
+})
 })()
