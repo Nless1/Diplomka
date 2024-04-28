@@ -1,6 +1,7 @@
 :root{
   --title-text: linear-gradient(137deg, #ffffff, #b0faff75); 
   --general-text: #ffffff;
+  --transition: all .4s;
 }
 html{
   scroll-behavior: smooth;
@@ -13,7 +14,11 @@ html{
   background: #0D111B;
   color: var(--general-text);
 }
-.body--opened-menu{
+.body--opened-menu,
+.body--opened-modal-1,
+.body--opened-modal-2,
+.body--opened-modal-3,
+.body--opened-modal-4{
   overflow: hidden;
 }
 .wrapper{
@@ -22,6 +27,13 @@ html{
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: var(--transition);
+}
+.body--opened-modal-1 .wrapper,
+.body--opened-modal-2 .wrapper,
+.body--opened-modal-3 .wrapper,
+.body--opened-modal-4 .wrapper{
+  filter: blur(10px);
 }
 .main__about{
   padding: 180px 0 20px;
@@ -89,6 +101,7 @@ html{
   background: #ffffff1a;
   position: relative;
   box-shadow: 0 4px 20px 0 #00000017;
+  /* overflow: hidden; */
 }
 .form-input {
   background: none;
@@ -108,4 +121,287 @@ html{
 }
 .form-submit:hover{
   background: #30b9b7;
+}
+/* ============================================ */
+/* ============================================ */
+/* ============================================ */
+
+.modal{
+  position: fixed;
+  inset: 0;
+  background: #00000052;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .4s;
+  padding: 0 20px;
+}
+.body--opened-modal-1 .modal__android,
+.body--opened-modal-2 .modal__apple,
+.body--opened-modal-3 .modal__linux,
+.body--opened-modal-4 .modal__windows{
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__window{
+  transition: all .6s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--general-bg);
+  position: relative;
+  padding: 30px;
+  max-width: 540px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 11;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background: #00000066;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: blur(10px);
+}
+.body--opened-modal-1 .android-window,
+.body--opened-modal-2 .apple-window,
+.body--opened-modal-3 .linux-window,
+.body--opened-modal-4 .windows-window{
+  visibility: visible;
+  filter: blur(0px);
+  opacity: 1;
+  transition: all .6s;
+  z-index: 11;
+}
+.modal__close{
+  position: absolute;
+  top: 4.1%;
+  right: 2.3%;
+  cursor: pointer;
+}
+.modal__close rect, 
+.modal__close path{
+  transition: all .5s;
+  stroke: #ffffff53;
+}
+.modal__close:hover rect, 
+.modal__close:hover path{
+  stroke: #ffffff9d;
+}
+.modal__title{
+  text-align: center;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 112.6%;
+}
+.modal__title-wrap{
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-bottom: 11px;
+}
+.modal__text {
+  font-size: 20px;
+  opacity: 0.6;
+  font-weight: 800;
+  line-height: 112.6%;
+  margin-bottom: 15px;
+}
+.modal__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, .8fr);
+  gap: 0 50px;
+}
+.modal__google-play-link {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 2;
+  justify-self: center;
+  max-height: 36px;
+  transition: all .4s;
+}
+.modal__google-play-link:hover{
+  transform: scale(1.1);
+}
+.modal__QR {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal__QR img{
+  transition: all .4s;
+  max-width: 78px;
+  max-height: 78px;
+}
+.modal__QR:hover img{
+  transform: scale(1.1);
+}
+.QR-text,
+.modal__button-text {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 10px;
+  font-weight: 400;
+  line-height: 112.6%;
+  max-width: 123px;
+  text-align: center;
+}
+.modal__button-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.modal__button {
+  max-width: 123px;
+  max-height: 32px;
+  font-family: "ABeeZee";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  padding: 7px 24px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px 0px #00ffa354;
+  background: #1d9a6d;
+}
+
+/* ============================================ */
+
+.apple-window{
+  padding-bottom: 80px;
+}
+.apple-title-wrap{
+  margin-bottom: 20px;
+}
+.modal__text-apple{
+  margin-bottom: 35px;
+}
+.modal-install{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.modal-install-apple {
+  display: flex;
+  margin-bottom: 23px;
+  max-width: 250px;
+  width: 100%;
+  color: #ffffffaa;
+}
+.install-links{
+  margin-left: 6px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 199px;
+  width: 100%;
+  gap: 15px;
+  position: relative;
+}
+.install-link {
+  color: #279d88;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 112.6%;
+  text-decoration: underline;
+  transition: all .4s;
+}
+.install-link:first-child::after{
+  content: '';
+  position: absolute;
+  right: 45%;
+  height: 20px;
+  width: 1px;
+  background: #ffffff40;
+}
+.install-link:hover{
+  text-decoration: underline;
+  color: #39d3b7;
+}
+.install__text {
+  color: #adadad;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 155.1%;
+  text-align: center;
+}
+
+/* ============================================ */
+
+.linux-window{
+  padding-bottom: 50px;
+}
+.linux-title-wrap{
+  margin-bottom: 26px;
+}
+.modal__title-linux{
+  font-weight: 800;
+  font-size: 25px;
+}
+.modal__text-linux{
+  margin-bottom: 28px;
+}
+.modal-install-linux {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  display: flex;
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.arm,
+.x86{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 121px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 112.6%;
+}
+.install-title-linux {
+  margin-bottom: 18px;
+}
+.arm-wrap,
+.x86-wrap{
+  color: #ffffffaa;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.install-link{
+  opacity: 1;
+}
+.body--opened-modal-3 .install-link:first-child::after{
+  display: none;
+}
+.linux-link:first-child{
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+/* ============================================ */
+
+.modal__windows {
+  padding-bottom: 80px;
+}
+.window-title-wrap {
+  margin-bottom: 14px;
+}
+.modal__text-window {
+  margin-bottom: 35px;
+}
+.modal-install-window {
+  display: flex;
+  margin-bottom: 23px;
+  max-width: 250px;
+  width: 100%;
+  color: #ffffffaa;
+}
+.install__text-windows {
+  margin-bottom: 50px;
 }
