@@ -2,10 +2,11 @@
   --title-text: linear-gradient(137deg, #ffffff, #b0faff75); 
   --general-text: #ffffff;
   --transition: all .4s;
+  --border-color: #ffffff33;
+  --dark-bg: #151822;
 }
 html{
   scroll-behavior: smooth;
-  scroll-padding-top: 5vw;
 }
 .body {
   font-family: "Hauora", "Arial", sans-serif;
@@ -101,7 +102,7 @@ html{
   background: #ffffff1a;
   position: relative;
   box-shadow: 0 4px 20px 0 #00000017;
-  /* overflow: hidden; */
+  border: 1px solid var(--border-color);
 }
 .form-input {
   background: none;
@@ -133,7 +134,7 @@ html{
   z-index: 10;
   opacity: 0;
   visibility: hidden;
-  transition: all .4s;
+  transition: var(--transition);
   padding: 0 20px;
 }
 .body--opened-modal-1 .modal__android,
@@ -219,7 +220,7 @@ html{
   grid-column: 1 / span 2;
   justify-self: center;
   max-height: 36px;
-  transition: all .4s;
+  transition: var(--transition);
 }
 .modal__google-play-link:hover{
   transform: scale(1.1);
@@ -230,7 +231,7 @@ html{
   align-items: center;
 }
 .modal__QR img{
-  transition: all .4s;
+  transition: var(--transition);
   max-width: 78px;
   max-height: 78px;
 }
@@ -304,7 +305,7 @@ html{
   font-weight: 800;
   line-height: 112.6%;
   text-decoration: underline;
-  transition: all .4s;
+  transition: var(--transition);
 }
 .install-link:first-child::after{
   content: '';
